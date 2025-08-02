@@ -47,18 +47,17 @@ resource "aws_amplify_app" "frontend" {
           phases:
             preBuild:
               commands:
-                - cd ui
                 - npm ci
             build:
               commands:
                 - npm run build
           artifacts:
-            baseDirectory: ui/.next
+            baseDirectory: .next
             files:
               - '**/*'
           cache:
             paths:
-              - ui/node_modules/**/*
+              - node_modules/**/*
         appRoot: ui
   EOT
 
