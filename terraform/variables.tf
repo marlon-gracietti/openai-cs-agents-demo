@@ -33,3 +33,9 @@ variable "openai_api_key" {
   type        = string
   sensitive   = true
 }
+
+variable "github_access_token" {
+  description = "GitHub personal access token for Amplify"
+  type        = string
+  sensitive   = true
+}

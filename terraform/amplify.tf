@@ -36,8 +36,9 @@ resource "aws_iam_role_policy" "amplify_policy" {
 }
 
 resource "aws_amplify_app" "frontend" {
-  name       = "${var.project_name}-${var.environment}-frontend"
-  repository = var.github_repository
+  name         = "${var.project_name}-${var.environment}-frontend"
+  repository   = var.github_repository
+  access_token = var.github_access_token
 
   build_spec = <<-EOT
     version: 1
