@@ -52,14 +52,21 @@ resource "aws_amplify_app" "frontend" {
               commands:
                 - npm run build
           artifacts:
-            baseDirectory: .next
+            baseDirectory: .
             files:
               - '**/*'
+              - '!node_modules/**/*'
           cache:
             paths:
               - node_modules/**/*
         appRoot: ui
   EOT
+
+  custom_rule {
+    source = "/<*>"
+    status = "200"
+    target = "/index.html"
+  }
 
   environment_variables = {
     AMPLIFY_MONOREPO_APP_ROOT = "ui"
