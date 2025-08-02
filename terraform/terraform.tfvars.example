@@ -1,0 +1,8 @@
+# Copy this file to terraform.tfvars and fill in your values
+
+aws_region = "us-east-1"
+project_name = "openai-cs-agents-demo"
+environment = "dev"
+github_repository = "https://github.com/your-username/openai-cs-agents-demo"
+github_branch = "main"
+openai_api_key = "sk-your-openai-api-key-here"
